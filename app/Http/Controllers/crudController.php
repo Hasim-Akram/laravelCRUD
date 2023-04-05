@@ -20,6 +20,17 @@ class crudController extends Controller
 
       //most usable apporoch
 
+      //adding validation 
+
+      request()->validate([
+         'name' =>['required', 'min:3', 'max:20'],
+         'email' =>'required|email',
+         'address' =>'required|max:20'
+         
+
+      ]);
+
+
       LaraCrud::create($request->all());
 
       // LaraCrud::create($request->only('name', 'email'));

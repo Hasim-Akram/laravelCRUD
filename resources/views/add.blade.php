@@ -24,6 +24,19 @@
                     <a href="{{url('/')}}" class="btn btn-primary my-3">show Data</a>
 
                 </div>
+
+                <!-- @if($errors->any())
+             
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li> {{ $error }}</li>
+                            @endforeach
+                        </ul>    
+                   
+                  </div>
+                            
+                @endif -->
                
                     <form action="{{ url('/store')}}" method="post">
                         
@@ -33,13 +46,23 @@
                            <div class="form-group">
                                 <label for="Name"  class="">Name</label>
                                 <input type="text" name="name" class="form-control" placeholder="Name">
+                                @error('name')
+                                  <span class="text-danger">{{$message}}</span>
+                                @enderror
+                             
                             <div class="form-group">
                                     <label for="Email" class="">Email</label>
-                                    <input type="email" name="email" class="form-control" id="inputEmail3"  placeholder="email">
+                                    <input type="text" name="email" class="form-control" id="inputEmail3"  placeholder="email">
+                                @error('email')
+                                  <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                     <label for="address" class="">Address</label>
                                     <input type="text" name="address" class="form-control"  placeholder="address">
+                                    @error('address')
+                                       <span class="text-danger">{{$message}}</span>
+                                    @enderror
                             </div>
                             <br>
                             
