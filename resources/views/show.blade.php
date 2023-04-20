@@ -55,12 +55,20 @@
                        <button type="submit" class="btn btn-danger">Delete</button>
 
                     </form> -->
-                    
+
+                   
                     
                     @endforeach
+
+                   
+               
+                   
                 </tbody>
+              
+
+               
             </table>
-            
+            {{$list -> links() }}
 
         </div>
 

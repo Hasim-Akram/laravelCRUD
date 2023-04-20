@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 use App\Models\LaraCRUD;
-
+use Illuminate\Pagination\Paginator;
+use App\Models\Link;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Http\Request; 
 
 class crudController extends Controller
 {
    public function show(){
-      // $list=LaraCRUD::paginate(7);
-      $list=LaraCRUD::all();
+       $list=LaraCRUD::paginate(5);
+      // $list=LaraCRUD::all();
       return view('show', compact('list'));
    //  return view('show');
    }
