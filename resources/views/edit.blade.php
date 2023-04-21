@@ -34,14 +34,31 @@
                            <div class="form-group">
                                 <label for="Name"  class="">Name</label>
                                 <input type="text" name="name" class="form-control"  value="{{$LaraCRUD->name}}">
+                            </div>
+                            @error('name')
+                                  <span class="text-danger">{{$message}}</span>
+                                @enderror
                             <div class="form-group">
                                     <label for="Email" class="">Email</label>
                                     <input type="email" name="email" class="form-control" id="inputEmail3"   value="{{$LaraCRUD->email}}">
                             </div>
+                            @error('email')
+                                  <span class="text-danger">{{$message}}</span>
+                                @enderror
+                            <div class="form-group">
+                                    <label for="Email" class="">Phone</label>
+                                    <input type="number" name="phone" class="form-control" id="inputEmail3"   value="{{$LaraCRUD->phone}}">
+                            </div>
+                            @error('phone')
+                                  <span class="text-danger">{{$message}}</span>
+                                @enderror
                             <div class="form-group">
                                     <label for="address" class="">Address</label>
                                     <input type="text" name="address" class="form-control" value="{{$LaraCRUD->address}}">
                             </div>
+                            @error('address')
+                                  <span class="text-danger">{{$message}}</span>
+                                @enderror
                             <br>
                             
                             <input type="submit" class="btn btn-primary" value="Update">

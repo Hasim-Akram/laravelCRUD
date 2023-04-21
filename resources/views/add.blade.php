@@ -58,6 +58,14 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+                                    <label for="phone" class="">Phone</label>
+                                    <input type="number" name="phone" class="form-control" id="inputEmail3"  placeholder="phone has custom rules">
+                                @error('phone')
+                                  <span class="text-danger">{{$message}}</span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
                                     <label for="address" class="">Address</label>
                                     <input type="text" name="address" class="form-control"  placeholder="address">
                                     @error('address')

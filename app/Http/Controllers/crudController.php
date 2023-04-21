@@ -6,6 +6,7 @@ use Illuminate\Pagination\Paginator;
 use App\Models\Link;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Http\Request; 
+use App\Rules\allowRule;
 
 class crudController extends Controller
 {
@@ -27,6 +28,7 @@ class crudController extends Controller
       request()->validate([
          'name' =>['required', 'min:3', 'max:20'],
          'email' =>'required|email',
+         'phone' =>['required', new allowRule],
          'address' =>'required|max:20'
          
 
@@ -103,15 +105,31 @@ public function update($id){
 
    $update=LaraCrud::find($id);
 
+
+
    $name=request()->input('name');
 
       // $name=request('name');
       $email=request('email');
+      $phone=request('phone');
       $address=request('address');
+
+
+
+      request()->validate([
+         'name' =>['required', 'min:3', 'max:20'],
+         'email' =>'required|email',
+         'phone' =>['required', new allowRule],
+         'address' =>'required|max:20'
+         
+   
+      ]);
+   
 
          //1st way of update 
       $update-> name=$name;
       $update -> email=$email;
+      $update -> phone=$phone;
       $update -> address=$address;
       $update->save();
 

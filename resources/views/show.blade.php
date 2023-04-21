@@ -29,6 +29,7 @@
                     <th scope="col">id</th>
                     <th scope="col">name</th>
                     <th scope="col">email</th>
+                    <th scope="col">phone</th>
                     <th scope="col">address</th>
                     <th scope="col">Created_At</th>
                     <th scope="col">Updated_At</th>
@@ -43,6 +44,7 @@
                     <td>{{$lists->id}}</td>
                     <td>{{$lists->name}}</td>
                     <td>{{$lists->email}}</td>
+                    <td>{{$lists->phone}}</td>
                     <td>{{$lists->address}}</td>
                     <td>{{$lists->created_at->diffForHumans()}}</td>
                     <td>{{$lists->updated_at->diffForHumans()}}</td>

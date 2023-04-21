@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class LaraCRUD extends Model
 {
     use HasFactory;
-    protected $fillable=['name', 'email', 'address'];
+    protected $fillable=['name', 'email','phone', 'address'];
 }
